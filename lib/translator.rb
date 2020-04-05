@@ -23,5 +23,13 @@ end
 def get_english_meaning(file_path, emoticon)
   # code goes here
   working_hash = load_library(file_path)
-  
+  meaning = ""
+  working_hash.each do |(key, emote_hash)|
+    emote_hash.each do |(language_key, emote)
+      if emote == emoticon 
+        meaning = key
+      end
+    end
+  end
+  meaning
 end

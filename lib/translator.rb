@@ -7,10 +7,10 @@ def load_library(file_path)
   emote = YAML.load_file(file_path)
   working_hash = {}
    emote.each do |(key, emote_array)|
-    emote_array.each do |(english_emote, japanese_emote)|
+    emote_array.each do |x|
       working_hash[key] = {}
-      working_hash[key][:english] = english_emote
-      working_hash[key][:japanese] = japanese_emote
+      working_hash[key][:english] = emote_array[0]
+      working_hash[key][:japanese] = emote_array[1]
     end
   end 
   working_hash
